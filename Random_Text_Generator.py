@@ -4,33 +4,33 @@ import sys
 # these are reading the txt files and appropriately creating
 # lists for each type of word
 
-Adverbs = []
+adverbs = []
 fileAdverbs = open('6K adverbs.txt', 'r')
 dAdverbs = fileAdverbs.read()
 lines = dAdverbs.split('\n')
 for i in lines:
-    Adverbs.append(i)
+    adverbs.append(i)
 
-Verbs = []
+verbs = []
 fileVerbs = open('31K verbs.txt', 'r')
 dVerbs = fileVerbs.read()
 lines = dVerbs.split('\n')
 for i in lines:
-    Verbs.append(i)
+    verbs.append(i)
 
-Nouns = []
+nouns = []
 fileNouns = open('91K nouns.txt', 'r')
 dNouns = fileNouns.read()
 lines = dNouns.split('\n')
 for i in lines:
-    Nouns.append(i)
+    nouns.append(i)
 
-Adjectives = []
+adjectives = []
 fileAdjectives = open('28K adjectives.txt', 'r')
 dAdjectives = fileAdjectives.read()
 lines = dAdjectives.split('\n')
 for i in lines:
-    Adjectives.append(i)
+    adjectives.append(i)
 
 # these are some lists used in the generation process
 
@@ -86,31 +86,31 @@ def word_selector(words):
 def standard_sentence(amount):
     for h in range(amount):
         word = []
-        Adjective = word_selector(Adjectives)
-        Verb = word_selector(Verbs)
-        if Adjective[0].lower() in vowels:
-            if Verb.endswith('e') == True:
-                word_positions = [word_selector(articles_1), Adjective, word_selector(Nouns), word_selector(Adverbs), Verb, word_selector(Nouns)]
+        adjective = word_selector(adjectives)
+        verb = word_selector(verbs)
+        if adjective[0].lower() in vowels:
+            if verb.endswith('e') == True:
+                word_positions = [word_selector(articles_1), adjective, word_selector(nouns), word_selector(adverbs), verb, word_selector(nouns)]
                 for i in word_positions:
                     word.append(i)
                 print('\n' + word[0] + ' ' + word[1] + ' ' + word[2] + ' ' + word[3] + ' ' + word[4] + 's' + ' ' + word[5]
                       + '.' + ' ' + '\n')
             else:
-                word_positions = [word_selector(articles_2), Adjective, word_selector(Nouns), word_selector(Adverbs), Verb, word_selector(Nouns)]
+                word_positions = [word_selector(articles_2), adjective, word_selector(nouns), word_selector(adverbs), verb, word_selector(nouns)]
                 for i in word_positions:
                     word.append(i)
                 print('\n' + word[0] + ' ' + word[1] + ' ' + word[2] + ' ' + word[3] + ' ' + word[
                     4] + ' ' + word[5] + '.' + ' ' + '\n')
         else:
-            if Verb.endswith('e') == True:
-                word_positions = [word_selector(articles_2), Adjective, word_selector(Nouns), word_selector(Adverbs), Verb, word_selector(Nouns)]
+            if verb.endswith('e') == True:
+                word_positions = [word_selector(articles_2), adjective, word_selector(nouns), word_selector(adverbs), verb, word_selector(nouns)]
                 for i in word_positions:
                     word.append(i)
                 print('\n' + word[0] + ' ' + word[1] + ' ' + word[2] + ' ' + word[3] + ' ' + word[
                     4] + 's' + ' ' + word[5] + '.' + ' ' + '\n')
             else:
 
-                word_positions = [word_selector(articles_1), Adjective, word_selector(Nouns), word_selector(Adverbs), Verb, word_selector(Nouns)]
+                word_positions = [word_selector(articles_1), adjective, word_selector(nouns), word_selector(adverbs), verb, word_selector(nouns)]
                 for i in word_positions:
                     word.append(i)
                 print('\n' + word[0] + ' ' + word[1] + ' ' + word[2] + ' ' + word[3] + ' ' + word[
