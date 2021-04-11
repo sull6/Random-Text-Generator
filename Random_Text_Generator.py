@@ -71,8 +71,8 @@ def word_selector(words):
 # the list of verbs I use are not correctly conjugated. I've implemented quick and easy fixes for these
 # issues, which can probably be optimised in the future.
 
-# at each iteration of the overall loop, the adjective and verb is generated first. Then there
-# are there is an if/else statement, with another if/else statement nested in each answer.
+# at each iteration of the overall loop, the adjective and verb is generated first. Then
+# there is an if/else statement, with another if/else statement nested in each answer.
 # the code asks if the adjective begins with a vowel (by converting it to lowercase and
 # checking against the vowels list). If yes, then it uses the second set of articles. It also
 # asks if the verb ends with the letter 'e'. If yes, then it adds the letter 's' to the
@@ -90,7 +90,7 @@ def standard_sentence(amount):
         verb = word_selector(verbs)
         if adjective[0].lower() in vowels:
             if verb.endswith('e') == True:
-                word_positions = [word_selector(articles_1), adjective, word_selector(nouns), word_selector(adverbs), verb, word_selector(nouns)]
+                word_positions = [word_selector(articles_2), adjective, word_selector(nouns), word_selector(adverbs), verb, word_selector(nouns)]
                 for i in word_positions:
                     word.append(i)
                 print('\n' + word[0] + ' ' + word[1] + ' ' + word[2] + ' ' + word[3] + ' ' + word[4] + 's' + ' ' + word[5]
@@ -103,7 +103,7 @@ def standard_sentence(amount):
                     4] + ' ' + word[5] + '.' + ' ' + '\n')
         else:
             if verb.endswith('e') == True:
-                word_positions = [word_selector(articles_2), adjective, word_selector(nouns), word_selector(adverbs), verb, word_selector(nouns)]
+                word_positions = [word_selector(articles_1), adjective, word_selector(nouns), word_selector(adverbs), verb, word_selector(nouns)]
                 for i in word_positions:
                     word.append(i)
                 print('\n' + word[0] + ' ' + word[1] + ' ' + word[2] + ' ' + word[3] + ' ' + word[
@@ -164,7 +164,7 @@ print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
 # this loop governs whether the code repeats or not
 
 while True:
-    repeat_code = input('\nWould you like like to generate more?\n ')
+    repeat_code = input('\nWould you like to generate more?\n ')
     if repeat_code in affirmative:
         type = input('\nPlease select a thing to generate from the following list:\n'
       ' - A standard sentence (type "standard").\n - [XXXX]\n - [XXXX]\n - [XXXX]\n')
