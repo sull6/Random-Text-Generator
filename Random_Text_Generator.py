@@ -155,7 +155,7 @@ def easter_egg():
 # Finally, the answer to the following question kicks off the code.
 
 type = input('Howdy! Please select a thing to generate from the following list:\n'
-      ' - A standard sentence (type "standard").\n - [XXXX]\n - [XXXX]\n')
+      ' - A standard sentence (type "standard").\n - [XXXX]\n - [XXXX]\n - [XXXX]\n')
 
 sentence_type(type)
 easter_egg()
@@ -167,7 +167,7 @@ while True:
     repeat_code = input('\nWould you like like to generate more?\n ')
     if repeat_code in affirmative:
         type = input('\nPlease select a thing to generate from the following list:\n'
-      ' - A standard sentence (type "standard").\n - [XXXX]\n - [XXXX]\n')
+      ' - A standard sentence (type "standard").\n - [XXXX]\n - [XXXX]\n - [XXXX]\n')
         sentence_type(type)
         easter_egg()
         print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
